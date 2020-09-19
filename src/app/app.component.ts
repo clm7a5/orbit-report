@@ -1,3 +1,5 @@
+//6b add to top
+import { Satellite } from './satellite';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +9,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'orbit-report';
+  //define sourceList
+  sourceList: Satellite[];
+
+//set sourceList to be an array of Satellite objects
 }

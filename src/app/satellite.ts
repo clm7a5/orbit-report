@@ -16,7 +16,9 @@ export class Satellite {
         this.launchDate = launchDate;
     }
     
-
-
+    
+shouldShowWarning(): boolean {
+    return this.type === "Space Debris";
+}
 
 }

@@ -1,6 +1,7 @@
 //6b add to top
-import { Component } from '@angular/core';
 import { Satellite } from './satellite';
+import { Component } from '@angular/core';
+
 
 @Component({
   selector: 'app-root',
@@ -17,9 +18,9 @@ export class AppComponent {
 //set sourceList to be an array of Satellite objects
 //delete 1st constructor and replace it
 constructor() {
-  this.displayList = []
   this.sourceList = [];
   let satellitesUrl = 'https://handlers.education.launchcode.org/static/satellites.json';
+  this.displayList = []
 
   window.fetch(satellitesUrl).then(function(response) {
      response.json().then(function(data) {
@@ -33,11 +34,10 @@ constructor() {
         this.sourceList.push(satellite);
         }
       
-     
-
-     }.bind(this));
-     
-  }.bind(this));
+     // make a copy of the sourceList to be shown to the user
+     this.displayList = this.sourceList.slice(0);
+    }.bind(this));
+ }.bind(this));
 
 }
 
